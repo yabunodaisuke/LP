@@ -1,9 +1,22 @@
+import Link from "next/link";
+import Header from "@/components/Header";
+
+
 const Home: React.FC = () => (
-  <main className='mx-auto max-w-6xl py-6'>
+  <section className='mx-auto max-w-6xl py-6 bg-beige'>
     <h1 className='text-lg font-bold text-primary-800'>
-      Welcome to Kikagaku Next.js Starter Kit!!
+      
     </h1>
-  </main>
+    <Header />
+    <div className="text-lg">
+<Link href="/other" >
+  other
+</Link>
+</div>
+  </section>
+      
 );
+
+  
 
 export default Home;

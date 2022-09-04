@@ -35,6 +35,7 @@ module.exports = {
       yellow: '#F2C94C',
       black: '#344242',
       white: '#FFFFFF',
+      beige: '#FCFAF2',
     },
     fontSize: {
       xs: '0.75rem',
