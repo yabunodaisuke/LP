@@ -1,4 +1,5 @@
 module.exports = {
+  // mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontWeight: {
@@ -35,7 +36,6 @@ module.exports = {
       yellow: '#F2C94C',
       black: '#344242',
       white: '#FFFFFF',
-      beige: '#FCFAF2',
     },
     fontSize: {
       xs: '0.75rem',
@@ -45,7 +45,30 @@ module.exports = {
       xl: '1.875rem',
       '2xl': '2.25rem',
     },
-    extend: {},
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
+    extend: {
+      backgroundImage: theme => ({
+        'wel': "url('/img/welding.png')",
+    
+      }),
+    },
   },
   plugins: [],
 };
+
+ 
