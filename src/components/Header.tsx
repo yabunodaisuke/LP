@@ -18,46 +18,41 @@ export default function Header () {
     const menuLists  = [
     
             {link:'top', name:'Top'},
-            {link:'悩み', name:'悩み'},
-            {link:'解決策', name:'解決策'},
-            {link:'料金', name:'料金'},
+            {link:'service', name:'Service'},
+            {link:'price', name:'price'},
+            {link:'company', name:'Company'},
             ];
     return (
 <nav className='grid grid-cols-2'>
       <div>
         <Link href='/'>
-          <a className='px-5 '>
+          <a className='md:px-10 '>
             <Image src='/img/fwywd.png' alt='logo' width={200} height={100} />
           </a>
         </Link>
       </div>
       {openMenu ? (
-        <div className='flex flex-row absolute z-10   min-h-fit min-w-full'>
+        <div className='flex  z-10  min-h-fit min-w-full'>
           <div className='basis-1/2'></div>
 
-          <div className='basis-1/2 bg-white '>
-            <ul className=' text-center  '>
-              <li className='p-2 '>
-                <button onClick={menuFunction} className='font-light'>
-                  close
-                </button>
-              </li>
-              {menuLists.map((value, index) => (
-                <li key={index} className='p-2 border-primary-500'>
-                  {/* <a href={value.link} onClick={menuFunction}>
-                    {value.name}
-                  </a> */}
-                  <Scroll to={value.link} smooth={true} offset={-50} onClick={menuFunction} >
-                          {value.name}
-                       </Scroll>
-                </li>
-
-              ))}
-            </ul>
+          <div className='basis-1/2 bg-white text-[#d0277c]'>
+          <ul className='text-center '>
+                      <li>
+                        <button onClick={menuFunction} className=''>close</button>
+                      </li>
+                      {menuLists.map((value, index) => (
+                          <li className='text-primary-dark hover:opacity-50 hover' key={index}> 
+                          <Scroll to={value.link} smooth={true} offset={-50} onClick={menuFunction}>
+                             {value.name}
+                         </Scroll>
+                        
+                         </li>
+                  ))}
+                   </ul>
           </div>
         </div>
       ) : undefined}
-      <div className='flex-initial text-[#abc5c5]  m-5 '>
+      <div className='flex-initial text-[#83d4d4]  m-5 '>
         <ul className='md:flex  hidden flex-initial text-left'>
           {menuLists.map((value, index) => (
             <li key={index} className='p-4 text-lg'>
@@ -66,7 +61,7 @@ export default function Header () {
           ))}
         </ul>
       </div>
-      <button onClick={menuFunction} className='flex-initial absolute top-0 right-0 md:hidden'>
+      <button onClick={menuFunction} className='flex-initial absolute top-5 right-5 md:hidden'>
         <Image src='/img/menu.png' alt='menu' width={50} height={50} />
       </button>
     </nav>
